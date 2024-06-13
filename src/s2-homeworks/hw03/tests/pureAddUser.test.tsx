@@ -1,5 +1,4 @@
-import React from 'react'
-import {pureAddUser} from '../GreetingContainer'
+import {ENTER_NAME_ERROR, pureAddUser} from '../GreetingContainer'
 
 let name: any
 const setName = (a: any) => {
@@ -31,13 +30,13 @@ test('name 2', () => {
     name = ''
     pureAddUser(name, setError, setName, addUserCallback)
     expect(name).toBe('')
-    expect(error).toBe('Ошибка! Введите имя!')
+    expect(error).toBe(ENTER_NAME_ERROR)
     expect(added).toBe(false)
 })
 test('name 3', () => {
     name = '    '
     pureAddUser(name, setError, setName, addUserCallback)
     expect(name).toBe('    ')
-    expect(error).toBe('Ошибка! Введите имя!')
+    expect(error).toBe(ENTER_NAME_ERROR)
     expect(added).toBe(false)
 })
